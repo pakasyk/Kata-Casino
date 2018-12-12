@@ -111,12 +111,47 @@ main .upper .right .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  position: relative;
 }
 
 main .upper .right .container img {
+  position: absolute;
+  left: 5%;
+  top: 5%;
   display: block;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
+  opacity: 1;
+}
+
+main .upper .right .container p {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  opacity: 0;
+}
+
+main .upper .right .container img.inside {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  opacity: 0;
+}
+
+main .upper .right .container.on {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+main .upper .right .container.on img.outside {
+  opacity: 0;
+}
+
+main .upper .right .container.on p, main .upper .right .container.on img.inside {
+  opacity: 1;
 }
 
 main .lower {
@@ -187,6 +222,11 @@ main .lower .left .numbers .number {
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid #000;
+  font-weight: bold;
+}
+
+main .lower .left .numbers .number.off {
+  background-color: gray;
 }
 
 main .lower .left .footer {
@@ -219,17 +259,101 @@ main .lower .left .footer .button:active {
           transform: translateY(4px);
 }
 
-main .lower .left .footer .lamp {
-  width: 50px;
+main .lower .left .footer .lamp-big {
+  width: 40px;
   height: 50px;
   background-image: url(./img/bulb.png);
   background-repeat: no-repeat;
-  background-size: 100px 50px;
+  background-size: 80px 50px;
 }
 
 main .lower .right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+main .lower .right .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .lower .right .container .column {
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  max-width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+main .lower .right .container .column .lamp {
+  width: 30px;
+  height: 40px;
+  background-image: url(./img/bulb.png);
+  background-repeat: no-repeat;
+  background-size: 60px 40px;
+}
+
+main .lower .right .container .column .button {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 2px #881b1b;
+          box-shadow: 1px 2px #881b1b;
+  background-color: #881b1b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%23ff3535' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+main .lower .right .container .column .button.off {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #843d3d;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%23881b1b' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+main .lower .right .container .column:nth-child(2) {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+main .lower .right .container .column:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+
+main .lower .right .container .column:nth-child(4) {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 /*# sourceMappingURL=main.css.map */

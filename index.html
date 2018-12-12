@@ -19,11 +19,14 @@
                 
             </div>
             <div class="right">
-                <div class="container">
-                    <img src="./img/2.jpg" alt="">
+                <div class="container two">
+                    <img src="./img/2.jpg" alt="" class="outside">
+                    <img src="img/key-2824086_960_720.png" class="inside">
                 </div>
-                <div class="container">
-                    <img src="./img/1.jpg" alt="">
+                <div class="container one">
+                    
+                    <img src="./img/1.jpg" alt="" class="outside">
+                    <p>Prisimink skaicius</p>
                 </div>
                 
             </div>
@@ -31,30 +34,58 @@
         <div class="lower">
             <div class="left">
                 <div class="numbers">
-                    <div class="number">1</div>
-                    <div class="number">5</div>
-                    <div class="number">6</div>
-                    <div class="number">3</div>
-                    <div class="number">4</div>
-                    <div class="number">V</div>
-                    <div class="number">1</div>
-                    <div class="number">8</div>
-                    <div class="number">9</div>
-                    <div class="number">1</div>
-                    <div class="number">2</div>
-                    <div class="number">3</div>
-                    <div class="number">1</div>
-                    <div class="number">1</div>
-                    <div class="number">6</div>
-                    <div class="number">7</div>
+                    <div class="number" onclick="codeNumber(this)">1</div>
+                    <div class="number" onclick="codeNumber(this)">5</div>
+                    <div class="number" onclick="codeNumber(this)">6</div>
+                    <div class="number" onclick="codeNumber(this)">3</div>
+                    <div class="number" onclick="codeNumber(this)">4</div>
+                    <div class="number" onclick="codeNumber(this)">V</div>
+                    <div class="number" onclick="codeNumber(this)">1</div>
+                    <div class="number" onclick="codeNumber(this)">8</div>
+                    <div class="number" onclick="codeNumber(this)">9</div>
+                    <div class="number" onclick="codeNumber(this)">1</div>
+                    <div class="number" onclick="codeNumber(this)">2</div>
+                    <div class="number" onclick="codeNumber(this)">3</div>
+                    <div class="number" onclick="codeNumber(this)">1</div>
+                    <div class="number" onclick="codeNumber(this)">1</div>
+                    <div class="number" onclick="codeNumber(this)">6</div>
+                    <div class="number" onclick="codeNumber(this)">7</div>
                 </div>
                 <div class="footer">
-                    <div class="button"></div>
-                    <div class="lamp"></div>
+                    <div class="button button-big"></div>
+                    <div class="lamp-big"></div>
                 </div>
             </div>
             <div class="right">
-                tralala
+                <div class="container">
+                    <div class="column">
+                        <div class="lamp"></div>
+                        <div class="button button-small" onclick="firstButton(this)" first="1"></div>
+                    </div>
+                    <div class="column">
+                        <div class="lamp"></div>
+                        <div class="button button-small" onclick="firstButton(this)" first="2"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="1"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="4"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="7"></div>
+                    </div>
+                    <div class="column">
+                        <div class="button button-small" onclick="secondButton(this)" second="2"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="5"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="8"></div>
+                    </div>
+                    <div class="column">
+                        <div class="lamp"></div>
+                        <div class="button button-small" onclick="firstButton(this)" first="3"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="3"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="6"></div>
+                        <div class="button button-small" onclick="secondButton(this)" second="9"></div>
+                    </div>
+                    <div class="column">
+                        <div class="lamp"></div>
+                        <div class="button button-small" onclick="firstButton(this)" first="4"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
